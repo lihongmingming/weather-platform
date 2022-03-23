@@ -229,22 +229,25 @@ function toggleWheel(localLang) {
  */
 function initMap() {
 
-	var standard = L.tileLayer('../example/files/tiles/{z}/{x}/{y}.png', { maxZoom: 6 });
+	var standard = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+		{
+			maxZoom: 11
+		});
 	// Get your own free OWM API key at https://www.openweathermap.org/appid - please do not re-use mine!
 	// You don't need an API key for this to work at the moment, but this will change eventually.
 	var OWM_API_KEY = '06aac0fd4ba239a20d824ef89602f311';
 
 	var clouds = L.OWM.clouds({opacity: 0.8, legendImagePath: 'files/NT2.png', appId: OWM_API_KEY});
-	var cloudscls = L.OWM.cloudsClassic({opacity: 0.5, appId: OWM_API_KEY});
-	var precipitation = L.OWM.precipitation( {opacity: 0.5, appId: OWM_API_KEY} );
-	var precipitationcls = L.OWM.precipitationClassic({opacity: 0.5, appId: OWM_API_KEY});
-	var rain = L.OWM.rain({opacity: 0.5, appId: OWM_API_KEY});
-	var raincls = L.OWM.rainClassic({opacity: 0.5, appId: OWM_API_KEY});
-	var snow = L.OWM.snow({opacity: 0.5, appId: OWM_API_KEY});
-	var pressure = L.OWM.pressure({opacity: 0.4, appId: OWM_API_KEY});
-	var pressurecntr = L.OWM.pressureContour({opacity: 0.5, appId: OWM_API_KEY});
-	var temp = L.OWM.temperature({opacity: 0.5, appId: OWM_API_KEY});
-	var wind = L.OWM.wind({opacity: 0.5, appId: OWM_API_KEY});
+	var cloudscls = L.OWM.cloudsClassic({opacity: 0.8, appId: OWM_API_KEY});
+	var precipitation = L.OWM.precipitation( {opacity: 0.8, appId: OWM_API_KEY} );
+	var precipitationcls = L.OWM.precipitationClassic({opacity: 0.8, appId: OWM_API_KEY});
+	var rain = L.OWM.rain({opacity: 0.8, appId: OWM_API_KEY});
+	var raincls = L.OWM.rainClassic({opacity: 0.8, appId: OWM_API_KEY});
+	var snow = L.OWM.snow({opacity: 0.8, appId: OWM_API_KEY});
+	var pressure = L.OWM.pressure({opacity: 0.8, appId: OWM_API_KEY});
+	var pressurecntr = L.OWM.pressureContour({opacity: 0.8, appId: OWM_API_KEY});
+	var temp = L.OWM.temperature({opacity: 0.8, appId: OWM_API_KEY});
+	var wind = L.OWM.wind({opacity: 0.8, appId: OWM_API_KEY});
 
 	var localLang = getLocalLanguage();
 
@@ -256,7 +259,7 @@ function initMap() {
 	windrose.on('owmlayeradd', windroseAdded, windrose); // Add an event listener to get informed when windrose layer is ready
 
 	var useGeolocation = true;
-	var zoom = 8;
+	var zoom = 5;
 	var lat = 30;
 	var lon = 120;
 	var urlParams = getUrlParameters();
