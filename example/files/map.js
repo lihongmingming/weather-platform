@@ -229,9 +229,9 @@ function toggleWheel(localLang) {
  */
 function initMap() {
 
-	var standard = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+	var standard = L.tileLayer('http://map.geoq.cn/ArcGIS/rest/services/ChinaOnlineStreetGray/MapServer/tile/{z}/{y}/{x}',
 		{
-			maxZoom: 11
+			maxZoom: 10
 		});
 	// Get your own free OWM API key at https://www.openweathermap.org/appid - please do not re-use mine!
 	// You don't need an API key for this to work at the moment, but this will change eventually.
